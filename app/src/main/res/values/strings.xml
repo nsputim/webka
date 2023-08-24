@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">webka</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="app_name">WEB.SMR</string>
+    <string name="title_home">Главная</string>
+    <string name="title_dashboard">Авторизация</string>
+    <string name="title_notifications">Уведомления</string>
 </resources>
