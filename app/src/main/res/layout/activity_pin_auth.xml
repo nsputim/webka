@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@android:color/black"
+    tools:context=".auth.PinAuthActivity">
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:text="Введите PIN-код"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Для доступа к приложению"
+        android:textSize="16sp"
+        android:textColor="@android:color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textTitle" />
+
+    <LinearLayout
+        android:id="@+id/pinDotsContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textDescription">
+
+        <ImageView
+            android:id="@+id/pinDot1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/pin_dot_empty" />
+
+        <ImageView
+            android:id="@+id/pinDot2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/pin_dot_empty" />
+
+        <ImageView
+            android:id="@+id/pinDot3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/pin_dot_empty" />
+
+        <ImageView
+            android:id="@+id/pinDot4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/pin_dot_empty" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Неверный PIN-код. Попробуйте снова."
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pinDotsContainer" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/keypadContainer"
+        android:layout_width="350dp"
+        android:layout_height="375dp"
+        android:layout_marginTop="48dp"
+        android:paddingHorizontal="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textError"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.33" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_vertical_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.67" />
+
+        <Button
+            android:id="@+id/button1"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="1"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button2"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="2"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_2"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button3"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginEnd="4dp"
+            android:text="3"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_2"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/button4"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="4"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button1" />
+
+        <Button
+            android:id="@+id/button5"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="5"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_2"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@+id/button2" />
+
+        <Button
+            android:id="@+id/button6"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_2"
+            app:layout_constraintTop_toBottomOf="@+id/button3" />
+
+        <Button
+            android:id="@+id/button7"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="7"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button4" />
+
+        <Button
+            android:id="@+id/button8"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="8"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_2"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@+id/button5" />
+
+        <Button
+            android:id="@+id/button9"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="4dp"
+            android:text="9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_2"
+            app:layout_constraintTop_toBottomOf="@+id/button6" />
+
+        <Button
+            android:id="@+id/button0"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="4dp"
+            android:text="0"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_2"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_1"
+            app:layout_constraintTop_toBottomOf="@+id/button8" />
+
+        <ImageButton
+            android:id="@+id/buttonBiometric"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="4dp"
+            android:background="@drawable/round_button_ripple_biometric"
+            android:src="@drawable/ic_fingerprint"
+            android:tint="@android:color/white"
+            app:layout_constraintEnd_toStartOf="@+id/guideline_vertical_1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/button7" />
+
+        <ImageButton
+            android:id="@+id/buttonBackspace"
+            style="@style/PinKeypadButton"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="28dp"
+            android:layout_marginEnd="4dp"
+            android:src="@android:drawable/ic_input_delete"
+            android:tint="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/guideline_vertical_2"
+            app:layout_constraintTop_toBottomOf="@+id/button9" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout> 

@@ -28,16 +28,15 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
     }
-    buildToolsVersion = "34.0.0"
 }
 
 dependencies {
@@ -50,6 +49,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1")
     implementation("androidx.navigation:navigation-fragment-ktx:2.7.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.7.1")
+    
+    // Биометрическая аутентификация
+    implementation("androidx.biometric:biometric:1.2.0-alpha05")
     
     // QR-код сканирование
     implementation("com.journeyapps:zxing-android-embedded:4.3.0")
